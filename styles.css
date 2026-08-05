@@ -618,6 +618,42 @@ body {
     color: var(--primary-light);
 }
 
+.services-divider {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 10px 0;
+}
+
+.services-divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.4), transparent);
+}
+
+.services-divider-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(34, 197, 94, 0.15));
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 50px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.services-divider-label i {
+    font-size: 1rem;
+    color: #34d399;
+}
+
 /* Portfolio Section */
 .portfolio-filter {
     display: flex;
