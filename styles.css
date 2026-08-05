@@ -1478,6 +1478,10 @@ body {
         top: 0;
     }
 
+    .container {
+        padding: 0 16px;
+    }
+
     .hero-name {
         font-size: 2.5rem;
     }
@@ -1495,6 +1499,45 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .service-card {
+        padding: 30px 24px;
+    }
+
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+    }
+
+    .service-icon i {
+        font-size: 1.5rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-features {
+        gap: 8px;
+    }
+
+    .service-features span {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+
+    .services-divider {
+        gap: 10px;
+        margin: 5px 0;
+    }
+
+    .services-divider-label {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+        gap: 7px;
+        letter-spacing: 0.5px;
+    }
+
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
@@ -1505,6 +1548,24 @@ body {
 
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    .skills-category {
+        padding: 25px 20px;
+    }
+
+    .skill-item {
+        padding: 15px;
+        min-width: 0;
+    }
+
+    .skills-tags {
+        gap: 10px;
+    }
+
+    .skill-tag {
+        font-size: 0.78rem;
+        padding: 6px 12px;
     }
 
     .section-title {
