@@ -19,16 +19,18 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
+                <img src="images/logo.png" alt="JM Logo" class="nav-logo-img">
                 <span class="logo-text">J</span>M
             </a>
             <div class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#services" class="nav-link">Services</a>
+                <a href="#workflow" class="nav-link">Workflow</a>
                 <a href="#portfolio" class="nav-link">Portfolio</a>
                 <a href="#projects" class="nav-link">Projects</a>
+                <a href="#analytics" class="nav-link">Results</a>
                 <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#skills" class="nav-link">Skills</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
@@ -115,26 +117,50 @@
             <div class="about-content">
                 <div class="about-text">
                     <p class="about-intro">
-                        I'm a passionate <strong>Social Media Manager</strong> and <strong>Digital Marketing Specialist</strong> 
-                        based in Nairobi, Kenya, with a proven track record of building and managing high-engagement 
-                        digital communities across Instagram and YouTube.
+                        I'm a passionate <strong>Social Media Manager</strong>, <strong>Digital Marketing Specialist</strong>,
+                        and <strong>Junior Developer</strong> based in Nairobi, Kenya — building high-engagement digital
+                        communities and the software that powers them.
                     </p>
                     <p>
-                        Currently pursuing a <strong>Bachelor of Science in Software Engineering</strong> at 
-                        United States International University Africa (USIU-Africa), I combine technical knowledge 
-                        with creative digital marketing strategies to help brands grow their online presence.
+                        With <strong>6+ years of experience</strong> growing brands across Instagram, YouTube, and now
+                        TikTok, I've helped pages reach over <strong>1.6 million followers</strong> through a proven mix of
+                        strategic content, community building, and relentless optimization.
+                    </p>
+                    <p class="about-mission">
+                        <strong>My mission:</strong> turn attention into community. Every strategy starts with understanding
+                        your audience, every asset is created to serve a goal, and every campaign is measured, refined,
+                        and scaled.
                     </p>
                     <p>
-                        I specialize in creating engaging content, developing audience growth strategies, 
-                        and analyzing social media trends to optimize content performance. My approach combines 
-                        data analytics with creative storytelling to build loyal online communities.
+                        As a <strong>Junior Developer</strong>, I bring that same growth mindset into engineering — designing
+                        clean, responsive web applications with <strong>Python, Flask, and SQL</strong> that solve real
+                        business problems from database to interface. Currently pursuing a <strong>BSc in Software Engineering</strong>
+                        at USIU-Africa, I bridge creative marketing with hands-on development.
                     </p>
-                    <p>
-                        As a <strong>Junior Developer</strong>, I also build and maintain web applications — 
-                        from content tools that support my social media work to full-stack projects like 
-                        data-driven web apps built with <strong>Python, Flask, and SQL</strong>. This technical 
-                        foundation lets me bridge creative marketing with hands-on software development.
-                    </p>
+
+                    <div class="about-values">
+                        <div class="value-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Creative Strategy</h4>
+                            <p>Campaigns designed around what your audience actually cares about.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Data-Driven</h4>
+                            <p>Every decision backed by analytics, testing, and measurable results.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-code"></i>
+                            <h4>Technical Build</h4>
+                            <p>From landing pages to full-stack apps, I build what marketing needs.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Community First</h4>
+                            <p>Engagement strategies that turn followers into loyal brand advocates.</p>
+                        </div>
+                    </div>
+
                     <div class="about-info">
                         <div class="info-item">
                             <i class="fas fa-map-marker-alt"></i>
@@ -149,13 +175,74 @@
                             <span>English & Swahili (Fluent)</span>
                         </div>
                     </div>
+
+                    <div class="about-actions">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Let's Work Together</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                        <a href="#portfolio" class="btn btn-secondary">
+                            <span>View My Work</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
                 <div class="about-visual">
+                    <div class="about-card">
+                        <div class="about-card-glow"></div>
+                        <div class="about-card-head">
+                            <div class="about-avatar">JM</div>
+                            <div>
+                                <h3>John Mutuku Mwanzia</h3>
+                                <span>Social Media Manager · Junior Developer</span>
+                            </div>
+                        </div>
+                        <div class="about-card-stats">
+                            <div class="about-stat">
+                                <span class="about-stat-num" data-count="6" data-suffix="+">0</span>
+                                <p>Years Experience</p>
+                            </div>
+                            <div class="about-stat">
+                                <span class="about-stat-num" data-count="12" data-suffix="+">0</span>
+                                <p>Pages Managed</p>
+                            </div>
+                            <div class="about-stat">
+                                <span class="about-stat-num" data-count="25" data-suffix="+">0</span>
+                                <p>Projects Delivered</p>
+                            </div>
+                            <div class="about-stat">
+                                <span class="about-stat-num" data-count="1.6" data-decimals="1" data-suffix="M+">0</span>
+                                <p>Followers Grown</p>
+                            </div>
+                        </div>
+                        <div class="about-card-skills">
+                            <div class="about-skill-row">
+                                <span>Social Media Strategy</span>
+                                <div class="about-skill-bar"><div class="about-skill-fill" style="--w:95%"></div></div>
+                            </div>
+                            <div class="about-skill-row">
+                                <span>Content Creation</span>
+                                <div class="about-skill-bar"><div class="about-skill-fill" style="--w:90%"></div></div>
+                            </div>
+                            <div class="about-skill-row">
+                                <span>Web Development</span>
+                                <div class="about-skill-bar"><div class="about-skill-fill" style="--w:78%"></div></div>
+                            </div>
+                            <div class="about-skill-row">
+                                <span>Data & Analytics</span>
+                                <div class="about-skill-bar"><div class="about-skill-fill" style="--w:82%"></div></div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="experience-badge">
                         <div class="badge-content">
                             <span class="badge-number">6+</span>
                             <span class="badge-text">Years Experience</span>
                         </div>
+                    </div>
+                    <div class="about-chip">
+                        <i class="fas fa-paper-plane"></i>
+                        Open to Opportunities
                     </div>
                 </div>
             </div>

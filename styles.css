@@ -16,10 +16,19 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Logo styling */
+.nav-logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 12px;
+    transition: var(--transition);
+}
+
+.nav-logo:hover .nav-logo-img {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
 }
 
 html {
@@ -465,6 +474,14 @@ body {
     font-size: 1.2rem !important;
 }
 
+.about-mission {
+    border-left: 3px solid var(--primary);
+    padding-left: 18px;
+    background: linear-gradient(90deg, rgba(99, 102, 241, 0.08), transparent);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+}
+
 .about-info {
     display: flex;
     flex-wrap: wrap;
@@ -484,47 +501,298 @@ body {
     font-size: 1.2rem;
 }
 
+/* About — value cards */
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 28px 0;
+}
+
+.value-item {
+    background: var(--bg-card);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    border-radius: 14px;
+    padding: 20px;
+    transition: var(--transition);
+}
+
+.value-item:hover {
+    border-color: rgba(99, 102, 241, 0.45);
+    background: var(--bg-card-hover);
+    box-shadow: var(--shadow-glow);
+}
+
+.value-item.fade-in:hover {
+    transform: translateY(-4px);
+}
+
+.value-item i {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: var(--primary-light);
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+}
+
+.value-item h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.value-item p {
+    font-size: 0.88rem !important;
+    margin-bottom: 0 !important;
+    color: var(--text-muted) !important;
+}
+
+/* About — action buttons */
+.about-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+/* About — profile card */
 .about-visual {
     display: flex;
     justify-content: center;
+    position: relative;
+    padding: 42px 30px 30px 40px;
 }
 
-.experience-badge {
+.about-card {
+    background: rgba(26, 26, 46, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 22px;
+    padding: 28px;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+/* Gradient border overlay */
+.about-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    padding: 1px;
+    background: var(--gradient-1);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.about-card:hover {
+    box-shadow: var(--shadow-glow);
+}
+
+.about-card.fade-in:hover {
+    transform: translateY(-6px);
+}
+
+.about-card-glow {
+    position: absolute;
+    top: -70px;
+    right: -70px;
     width: 200px;
     height: 200px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.25), transparent 70%);
+    pointer-events: none;
+}
+
+.about-card-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.about-avatar {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    border-radius: 18px;
+    background: var(--gradient-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.35);
+}
+
+.about-card-head h3 {
+    font-size: 1.15rem;
+    margin-bottom: 2px;
+}
+
+.about-card-head span {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+}
+
+/* About — stat grid */
+.about-card-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.about-stat {
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    border-radius: 12px;
+    padding: 14px 10px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.about-stat:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    background: rgba(99, 102, 241, 0.14);
+}
+
+.about-stat-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.1;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.about-stat p {
+    font-size: 0.78rem !important;
+    color: var(--text-muted) !important;
+    margin: 0 !important;
+}
+
+/* About — skill bars */
+.about-card-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+.about-skill-row span {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.about-skill-bar {
+    height: 8px;
+    border-radius: 50px;
+    background: rgba(99, 102, 241, 0.1);
+    overflow: hidden;
+}
+
+.about-skill-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #06b6d4, #6366f1);
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-card.in-view .about-skill-fill {
+    width: var(--w);
+}
+
+/* Floating experience badge */
+.experience-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 112px;
+    height: 112px;
     border-radius: 50%;
     background: var(--gradient-1);
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    z-index: 2;
 }
 
 .experience-badge::before {
     content: '';
     position: absolute;
-    width: 220px;
-    height: 220px;
-    border: 2px dashed var(--primary-light);
+    width: 130px;
+    height: 130px;
+    border: 2px dashed rgba(129, 140, 248, 0.6);
     border-radius: 50%;
     animation: rotate 20s linear infinite;
 }
 
 .badge-content {
     text-align: center;
+    position: relative;
 }
 
 .badge-number {
     display: block;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 3rem;
+    font-size: 1.9rem;
     font-weight: 700;
     color: var(--text-primary);
+    line-height: 1;
 }
 
 .badge-text {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.68rem;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* Floating chip */
+.about-chip {
+    position: absolute;
+    bottom: 6px;
+    right: 0;
+    background: var(--bg-card);
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    color: var(--text-primary);
+    padding: 10px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.about-chip i {
+    color: var(--accent);
 }
 
 /* Services Section */
