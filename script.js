@@ -135,10 +135,51 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.service-card, .portfolio-card, .skill-item, .skill-tag').forEach(el => {
+    document.querySelectorAll('.service-card, .portfolio-card, .skill-item, .skill-tag, .project-card, .workflow-step, .arch-layer, .chart-card, .kpi-card, .testimonial-card').forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);
     });
+
+    // Chart & Analytics Animations
+    // A second observer fires when charts/KPIs enter the viewport:
+    //  - adds .in-view so CSS transitions draw the line + bars
+    //  - triggers count-up for every numeric element inside
+    const analyticsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                entry.target.querySelectorAll('[data-count]').forEach(countUp);
+                analyticsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.chart-card, .kpi-grid').forEach(el => analyticsObserver.observe(el));
+
+    // Generic count-up helper (supports decimals + suffix)
+    function countUp(el) {
+        if (el.dataset.done) return;
+        el.dataset.done = 'true';
+        const target = parseFloat(el.getAttribute('data-count'));
+        const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 1600;
+        const start = performance.now();
+
+        const step = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+            const value = target * eased;
+            el.textContent = (decimals ? value.toFixed(decimals) : Math.round(value).toString()) + suffix;
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                el.textContent = (decimals ? target.toFixed(decimals) : target) + suffix;
+            }
+        };
+
+        requestAnimationFrame(step);
+    }
 
     // Observe hero section for counter animation
     const heroSection = document.querySelector('.hero');

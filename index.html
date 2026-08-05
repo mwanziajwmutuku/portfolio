@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <canvas id="cursor-trail" aria-hidden="true"></canvas>
+
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
@@ -22,6 +27,7 @@
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#portfolio" class="nav-link">Portfolio</a>
                 <a href="#projects" class="nav-link">Projects</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
@@ -352,6 +358,95 @@
         </div>
     </section>
 
+    <section id="workflow" class="workflow section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">How I Work</span>
+                <h2 class="section-title">My <span class="highlight">Workflow</span></h2>
+            </div>
+            <div class="workflow-steps">
+                <div class="workflow-step" data-aos="fade-up">
+                    <div class="step-number">01</div>
+                    <div class="step-icon"><i class="fas fa-search"></i></div>
+                    <div class="step-content">
+                        <h3>Research & Discovery</h3>
+                        <p>Audience analysis, competitor research, and trend mapping to understand what drives your community.</p>
+                    </div>
+                </div>
+                <div class="workflow-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">02</div>
+                    <div class="step-icon"><i class="fas fa-compass"></i></div>
+                    <div class="step-content">
+                        <h3>Strategy & Planning</h3>
+                        <p>A data-backed content calendar and growth strategy aligned with your brand goals and metrics.</p>
+                    </div>
+                </div>
+                <div class="workflow-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">03</div>
+                    <div class="step-icon"><i class="fas fa-pen-nib"></i></div>
+                    <div class="step-content">
+                        <h3>Design & Create</h3>
+                        <p>High-impact reels, shorts, graphics, and copy produced around a consistent visual identity.</p>
+                    </div>
+                </div>
+                <div class="workflow-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">04</div>
+                    <div class="step-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="step-content">
+                        <h3>Launch & Engage</h3>
+                        <p>Scheduled publishing, community management, and real-time engagement to keep momentum high.</p>
+                    </div>
+                </div>
+                <div class="workflow-step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">05</div>
+                    <div class="step-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="step-content">
+                        <h3>Analyze & Optimize</h3>
+                        <p>Performance reporting and continuous iteration so every campaign beats the last one.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="architecture">
+                <h3 class="architecture-title"><i class="fas fa-layer-group"></i> My Development Architecture</h3>
+                <p class="architecture-sub">How I structure the web applications I build</p>
+                <div class="architecture-stack">
+                    <div class="arch-layer arch-frontend">
+                        <div class="arch-icon"><i class="fas fa-desktop"></i></div>
+                        <div class="arch-info">
+                            <span class="arch-label">Frontend</span>
+                            <span class="arch-tech">HTML &nbsp;·&nbsp; CSS &nbsp;·&nbsp; JavaScript</span>
+                        </div>
+                        <i class="fas fa-angle-down arch-arrow"></i>
+                    </div>
+                    <div class="arch-layer arch-backend">
+                        <div class="arch-icon"><i class="fas fa-server"></i></div>
+                        <div class="arch-info">
+                            <span class="arch-label">Backend</span>
+                            <span class="arch-tech">Python &nbsp;·&nbsp; Flask &nbsp;·&nbsp; REST APIs</span>
+                        </div>
+                        <i class="fas fa-angle-down arch-arrow"></i>
+                    </div>
+                    <div class="arch-layer arch-data">
+                        <div class="arch-icon"><i class="fas fa-database"></i></div>
+                        <div class="arch-info">
+                            <span class="arch-label">Database</span>
+                            <span class="arch-tech">SQL &nbsp;·&nbsp; SQLite &nbsp;·&nbsp; Data Modeling</span>
+                        </div>
+                        <i class="fas fa-angle-down arch-arrow"></i>
+                    </div>
+                    <div class="arch-layer arch-deploy">
+                        <div class="arch-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                        <div class="arch-info">
+                            <span class="arch-label">Deployment</span>
+                            <span class="arch-tech">Git &nbsp;·&nbsp; GitHub &nbsp;·&nbsp; Vercel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="portfolio" class="portfolio section">
         <div class="container">
             <div class="section-header">
@@ -585,6 +680,179 @@
                         <span>SQLite</span>
                         <span>REST Routes</span>
                         <span>Jinja2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="analytics" class="analytics section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Results & Insights</span>
+                <h2 class="section-title">Performance <span class="highlight">Analytics</span></h2>
+            </div>
+
+            <div class="analytics-grid">
+                <div class="chart-card chart-growth" data-aos="fade-up">
+                    <div class="chart-head">
+                        <h3><i class="fas fa-chart-area"></i> Audience Growth</h3>
+                        <span class="chart-badge">+32% This Quarter</span>
+                    </div>
+                    <div class="chart-wrap">
+                        <svg class="area-chart" viewBox="0 0 400 180" preserveAspectRatio="none" aria-label="Audience growth line chart">
+                            <defs>
+                                <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#6366f1" stop-opacity="0.45"/>
+                                    <stop offset="100%" stop-color="#6366f1" stop-opacity="0.02"/>
+                                </linearGradient>
+                                <linearGradient id="lineStroke" x1="0" y1="0" x2="1" y2="0">
+                                    <stop offset="0%" stop-color="#06b6d4"/>
+                                    <stop offset="100%" stop-color="#ec4899"/>
+                                </linearGradient>
+                            </defs>
+                            <path class="area-path" d="M0,150 L70,128 L140,140 L210,95 L280,70 L350,32 L400,14 L400,180 L0,180 Z"/>
+                            <path class="line-path" d="M0,150 L70,128 L140,140 L210,95 L280,70 L350,32 L400,14"/>
+                        </svg>
+                        <div class="chart-labels">
+                            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card chart-bars-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="chart-head">
+                        <h3><i class="fas fa-chart-bar"></i> Engagement by Platform</h3>
+                        <span class="chart-badge">Avg. 8.4%</span>
+                    </div>
+                    <div class="bars-chart">
+                        <div class="bar-row">
+                            <span class="bar-label">Instagram</span>
+                            <div class="bar-track"><div class="chart-bar" data-width="82" style="--value:82%"></div></div>
+                            <span class="bar-value" data-count="9.2" data-decimals="1" data-suffix="%">0%</span>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">YouTube</span>
+                            <div class="bar-track"><div class="chart-bar" data-width="61" style="--value:61%"></div></div>
+                            <span class="bar-value" data-count="6.8" data-decimals="1" data-suffix="%">0%</span>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">TikTok</span>
+                            <div class="bar-track"><div class="chart-bar" data-width="100" style="--value:100%"></div></div>
+                            <span class="bar-value" data-count="11.4" data-decimals="1" data-suffix="%">0%</span>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">Facebook</span>
+                            <div class="bar-track"><div class="chart-bar" data-width="32" style="--value:32%"></div></div>
+                            <span class="bar-value" data-count="3.6" data-decimals="1" data-suffix="%">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card chart-donut-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="chart-head">
+                        <h3><i class="fas fa-chart-pie"></i> Content Mix</h3>
+                        <span class="chart-badge">What Performs</span>
+                    </div>
+                    <div class="donut-layout">
+                        <div class="donut-wrap">
+                            <div class="donut-fill" aria-label="Content mix donut chart"></div>
+                            <div class="donut-center">
+                                <span class="donut-big" data-count="1.2" data-decimals="1" data-suffix="M">0M</span>
+                                <span class="donut-sub">Monthly Views</span>
+                            </div>
+                        </div>
+                        <ul class="donut-legend">
+                            <li><span class="legend-dot dot-reels"></span>Reels <b data-count="45">0%</b></li>
+                            <li><span class="legend-dot dot-shorts"></span>Shorts <b data-count="25">0%</b></li>
+                            <li><span class="legend-dot dot-posts"></span>Posts <b data-count="20">0%</b></li>
+                            <li><span class="legend-dot dot-stories"></span>Stories <b data-count="10">0%</b></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="kpi-grid" data-aos="fade-up" data-aos-delay="300">
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-heart"></i></div>
+                        <span class="kpi-number" data-count="8.4" data-decimals="1" data-suffix="%">0</span>
+                        <span class="kpi-label">Avg. Engagement Rate</span>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-eye"></i></div>
+                        <span class="kpi-number" data-count="2.1" data-decimals="1" data-suffix="M">0</span>
+                        <span class="kpi-label">Monthly Reach</span>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-video"></i></div>
+                        <span class="kpi-number" data-count="480" data-decimals="0" data-suffix="K">0</span>
+                        <span class="kpi-label">Video Views / Month</span>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><i class="fas fa-rocket"></i></div>
+                        <span class="kpi-number" data-count="32" data-decimals="0" data-suffix="%">0</span>
+                        <span class="kpi-label">QoQ Follower Growth</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What People Say</span>
+                <h2 class="section-title">Client <span class="highlight">Testimonials</span></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "John completely transformed our fan pages. In six months our engagement tripled and
+                        the community finally feels alive. His content strategy is next level."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SW</div>
+                        <div class="testimonial-meta">
+                            <h4>Sarah W.</h4>
+                            <span>Brand Owner, Sports Fan Page Network</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Our YouTube channel grew from 20K to 100K subscribers under his management.
+                        The analytics reports made it easy to see exactly what was working."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DM</div>
+                        <div class="testimonial-meta">
+                            <h4>David M.</h4>
+                            <span>YouTube Channel Manager</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Professional, consistent, and incredibly creative. John handled everything from
+                        content calendars to community engagement while we focused on the business."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AK</div>
+                        <div class="testimonial-meta">
+                            <h4>Amira K.</h4>
+                            <span>Founder, Lifestyle Brand</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -847,7 +1115,11 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#workflow">Workflow</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#analytics">Results</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -873,5 +1145,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="cursor.js"></script>
 </body>
 </html>
