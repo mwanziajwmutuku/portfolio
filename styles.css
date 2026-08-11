@@ -692,39 +692,103 @@ body {
     margin: 0 !important;
 }
 
-/* About — skill bars */
-.about-card-skills {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+/* About — Professional Journey Timeline */
+.about-journey {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(99, 102, 241, 0.15);
     position: relative;
     z-index: 1;
 }
 
-.about-skill-row span {
-    display: block;
+.about-journey h4 {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.journey-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+    position: relative;
+}
+
+.journey-item:last-child {
+    margin-bottom: 0;
+}
+
+.journey-year {
+    min-width: 100px;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 0.85rem;
-    color: var(--text-secondary);
+    font-weight: 600;
+    color: var(--accent);
+    padding-top: 4px;
+}
+
+.journey-content h5 {
+    font-size: 0.95rem;
     margin-bottom: 6px;
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
-.about-skill-bar {
-    height: 8px;
-    border-radius: 50px;
-    background: rgba(99, 102, 241, 0.1);
-    overflow: hidden;
+.journey-content p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
 }
 
-.about-skill-fill {
-    height: 100%;
-    width: 0;
-    border-radius: 50px;
-    background: linear-gradient(90deg, #06b6d4, #6366f1);
-    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+/* About — Core Values Grid */
+.about-core-values {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(99, 102, 241, 0.15);
+    position: relative;
+    z-index: 1;
 }
 
-.about-card.in-view .about-skill-fill {
-    width: var(--w);
+.about-core-values h4 {
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    color: var(--text-primary);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.value-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(99, 102, 241, 0.06);
+    border: 1px solid rgba(99, 102, 241, 0.12);
+    border-radius: 10px;
+    padding: 14px 16px;
+    transition: var(--transition);
+}
+
+.value-card:hover {
+    background: rgba(99, 102, 241, 0.12);
+    border-color: rgba(99, 102, 241, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.2);
+}
+
+.value-card i {
+    font-size: 1.1rem;
+    color: var(--accent);
+}
+
+.value-card span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
 }
 
 /* Floating experience badge */
@@ -1576,6 +1640,124 @@ body {
 .btn-submit {
     width: 100%;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Contact form — header, row, focus effects, ripple, note */
+.form-header {
+    margin-bottom: 30px;
+}
+
+.form-header h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.form-header p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input,
+.input-wrapper textarea {
+    width: 100%;
+    padding: 16px 20px;
+    background: var(--bg-dark);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.input-wrapper textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.input-border {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    pointer-events: none;
+}
+
+.input-wrapper:focus-within .input-border {
+    transform: scaleX(1);
+}
+
+.input-focus-effect {
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: radial-gradient(60% 80% at 50% 50%, rgba(99, 102, 241, 0.18), transparent 70%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition);
+}
+
+.input-wrapper:focus-within .input-focus-effect {
+    opacity: 1;
+}
+
+.btn-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.btn-submit:active .btn-ripple {
+    animation: btn-ripple 0.6s ease-out forwards;
+}
+
+@keyframes btn-ripple {
+    to {
+        transform: translate(-50%, -50%) scale(60);
+        opacity: 0;
+    }
+}
+
+.form-note {
+    margin: 16px 0 0;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
 }
 
 /* Footer */
@@ -2565,6 +2747,18 @@ body.cursor-active .cursor-glow {
     .bar-label {
         min-width: 68px;
         font-size: 0.78rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-wrapper {
+        padding: 24px 20px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
     }
 }
 
